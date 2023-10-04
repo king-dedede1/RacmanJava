@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="RacmanJava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RacmanJava_jar</output-path>
+    <root id="archive" name="RacmanJava.jar">
+      <element id="module-output" name="RacmanJava" />
+    </root>
+  </artifact>
+</component>
