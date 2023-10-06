@@ -6,7 +6,7 @@ Right now it only supports a small subset of UYA features, namely savefile helpe
 
 ## How to run
 
-You need a Java runtime of version 17 or higher. Download the jar file and run it.
+You need a Java runtime of version 17 or higher. [Download the jar file](https://github.com/king-dedede1/RacmanJava/releases/latest/download/RacmanJava.jar) and run it.
 That's pretty much it, the setup on your PS3 is the same as on racman (install HEN/CFW and WebMAN)
 
 ## How to build
