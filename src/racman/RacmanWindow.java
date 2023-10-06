@@ -63,21 +63,20 @@ public class RacmanWindow extends JFrame
     {
         WebMAN.pauseRSX();
 
-        // im lazy lol
         byte[] input = Util.readFileBytes("res/input.bin");
         byte[] inputp = Util.readFileBytes("res/inputp.bin");
         byte[] lv2 = Util.readFileBytes("res/lv2.bin");
         byte[] tramp = Util.readFileBytes("res/tramp.bin");
 
-        WebMAN.writeMemory(pid, 0x980500, tramp);
-        WebMAN.writeMemory(pid, 0x980600, lv2);
+        WebMAN.writeMemoryBig(pid, 0x980500, tramp);
+        WebMAN.writeMemoryBig(pid, 0x980600, lv2);
         WebMAN.writeMemory(pid, 0x97C7E8, "489804CB");
-        WebMAN.writeMemory(pid, 0x9804C8, inputp);
-        WebMAN.writeMemory(pid, 0x981000, input);
+        WebMAN.writeMemoryBig(pid, 0x9804C8, inputp);
+        WebMAN.writeMemoryBig(pid, 0x981000, input);
 
         WebMAN.continueRSX();
 
-        WebMAN.notify("Enabled savefile heper mod");
+        WebMAN.notify("Enabled savefile helper mod");
     }
 
     private void initComponents()

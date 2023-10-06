@@ -66,6 +66,22 @@ public final class WebMAN
         GetData("http://"+ip+"/setmem.ps3mapi?proc="+pid+"$addr="+addr+"&val="+memory);
     }
 
+    public static void writeMemoryBig(int pid, int address, byte[] memory)
+    {
+        final int BLOCK_SIZE = 0x100;
+        int bytesToWrite = memory.length;
+        int idx = 0;
+
+        while (bytesToWrite > 0)
+        {
+            byte[] block = new byte[Math.min(bytesToWrite, BLOCK_SIZE)];
+            System.arraycopy(memory, idx, block, 0, block.length);
+            writeMemory(pid, address + idx, block);
+            bytesToWrite -= block.length;
+            idx += block.length;
+        }
+    }
+
     public static byte[] readMemory(int pid, int address, int size)
     {
         String addr = Integer.toHexString(address);
