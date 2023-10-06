@@ -3,6 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/RacmanJava_jar</output-path>
     <root id="archive" name="RacmanJava.jar">
       <element id="module-output" name="RacmanJava" />
+      <element id="directory" name="res">
+        <element id="dir-copy" path="$PROJECT_DIR$/res" />
+      </element>
     </root>
   </artifact>
 </component>
