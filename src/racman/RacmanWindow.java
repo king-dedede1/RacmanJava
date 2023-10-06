@@ -13,18 +13,14 @@ public class RacmanWindow extends JFrame
                     loadPosButton,
                     savePosButton,
                     dieButton;
-
     int pid;
-
     byte[] savedPos;
 
     public RacmanWindow()
     {
-        super();
         initComponents();
-
         pid = WebMAN.getCurrentPID();
-
+        WebMAN.notify("RaCMAN-J Connected");
     }
 
     private void savePosition(ActionEvent e)
@@ -50,6 +46,7 @@ public class RacmanWindow extends JFrame
         WebMAN.writeMemory(pid, 0xc4f918, 4, new byte[]{0,0,0,2});
         WebMAN.writeMemory(pid, 0x148a100, 4, new byte[]{0,0,0,1});
 
+        WebMAN.notify("Manips set up for NG+/No QE");
     }
 
     private void setAside(ActionEvent e)
@@ -79,6 +76,8 @@ public class RacmanWindow extends JFrame
         WebMAN.writeMemory(pid, 0x981000, input);
 
         WebMAN.continueRSX();
+
+        WebMAN.notify("Enabled savefile heper mod");
     }
 
     private void initComponents()

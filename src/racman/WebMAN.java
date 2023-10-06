@@ -2,19 +2,14 @@ package racman;
 
 import java.io.IOException;
 import java.net.URI;
-import java.net.URL;
+import java.net.URLEncoder;
 import java.net.http.*;
+import java.nio.charset.StandardCharsets;
 
 public final class WebMAN
 {
-
-    static HttpClient client;
+    static HttpClient client = HttpClient.newHttpClient();
     static String ip;
-
-    static
-    {
-        client = HttpClient.newHttpClient();
-    }
 
     // Don't allow this class to be instantiated.
     private WebMAN() {}
@@ -96,4 +91,8 @@ public final class WebMAN
         GetData("http://"+ip+"/xmb.ps3$rsx_continue");
     }
 
+    public static void notify(String message)
+    {
+        GetData("http://"+ip+"/popup.ps3/"+ URLEncoder.encode(message, StandardCharsets.US_ASCII));
+    }
 }
