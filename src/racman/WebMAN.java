@@ -47,7 +47,7 @@ public final class WebMAN
         }
     }
 
-    public static void writeMemory(int pid, int address, int size, byte[] memory)
+    public static void writeMemory(int pid, int address, byte[] memory)
     {
         String addr = Integer.toHexString(address);
 
